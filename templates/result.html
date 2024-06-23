@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h2>Prediction Result</h2>
+    <h3>Model predicted: {{ prediction }}</h3>
+    <img src="{{ url_for('static', filename=img_path) }}" alt="Uploaded Image">
+    <br><br>
+    <a href="/">Back to Upload</a>
+</body>
+</html>

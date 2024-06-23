@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홍익대학교 로그인 페이지</title>
+    <style>
+      .multi-spaces{
+        white-space: pre;
+      }
+      .box{
+        margin: 120px;
+      }
+      .Textbox {
+            width: 500px;
+            height: 350px;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+      .space
+      {
+           display: inline-block;
+           width: 10px;
+      }
+      .space-height180
+      {
+           display: inline-block;
+           height: 180px;
+      }
+      .space-height60
+      {
+           display: inline-block;
+           height: 60px;
+      }
+      .hidden {
+          display: none;
+      }
+    </style>
+      <script>
+        let counter = 0;
+
+        function incrementCounter() {
+            counter += 1;
+            document.getElementById('counterDisplay').innerText = counter;
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+  <div class="space-height180"></div>
+
+  <center>
+    <div class="space-height60">
+      <h1><img src="{{ url_for('static', filename='hongik.png') }}" alt="hongik" style="margin: 0;"></h1>
+    </div>
+  </center>
+  <center>
+    <span class="border border-light">
+       <div class="Textbox">
+         <center>
+           <div class="container text-center">
+               <div class="row">
+                 <div class="col">
+                    ID 로그인
+                 </div>
+               <div class="col">
+                    학생증 QR로그인
+              </div>
+                 <div class="col">
+                     Column
+                </div>
+                 </div>
+              </div>
+           <br></br>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text" id="basic-addon1">⊙</span>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+           <div class="input-group input-group-lg">
+             <span class="input-group-text" id="basic-addon2">⊙</span>
+             <input type="text" class="form-control" placeholder="password" aria-label="Username" aria-describedby="basic-addon1">
+           </div>
+           <br><br>
+           <button id="toggleButton" type="button" class="btn btn-primary"
+                 style="--bs-btn-padding-y: 1.25rem; --bs-btn-padding-x: 9.5rem; --bs-btn-font-size: 1.55rem;">
+               로그인
+         </center>
+
+
+
+       </div>
+    </span>
+  </center>
+  <center>
+      <div id="hiddenContent" class="hidden">
+         <p>보안숫자입력</p>
+
+            <img src="{{ url_for('static', filename=image_path1) }}" alt="MNIST Image" style="margin: 0;">
+            <img src="{{ url_for('static', filename=image_path2) }}" alt="MNIST Image" style="margin: 0;">
+             <img src="{{ url_for('static', filename=image_path3) }}" alt="MNIST Image" style="margin: 0;">
+             <img src="{{ url_for('static', filename=image_path4) }}" alt="MNIST Image" style="margin: 0;">
+              <img src="{{ url_for('static', filename=image_path5) }}" alt="MNIST Image" style="margin: 0;">
+              <img src="{{ url_for('static', filename=image_path6) }}" alt="MNIST Image" style="margin: 0;">
+
+             <br><br>
+             <form action="/check_input_num" method="POST">
+                 <label for="inputText">Enter a string:</label>
+                  <input type="text" id="userNumber" name="user_input_protectedNumber">
+                 <button type="submit">입력</button>
+              </form>
+            <br><br>
+            <form action="/renewal_num" method="POST">
+                <button type="submit" class="btn btn-secondary">새로고침</button>
+            </form>
+
+             <br><br>
+      </div>
+
+      <script>
+        document.getElementById('toggleButton').addEventListener('click', function() {
+            var hiddenContent = document.getElementById('hiddenContent');
+            if (hiddenContent.style.display === 'none') {
+                hiddenContent.style.display = 'block';
+            } else {
+                hiddenContent.style.display = 'none';
+            }
+        });
+    </script>
+      </center>
+    <center>
+      <p><div class="space"></div>
+      <a href="https://www.example.com">아이디 찾기</a>
+      <div class="space"></div>
+      <a href="https://www.example.com">비밀번호 찾기</a>
+      <div class="space"></div>
+      <a href="https://www.example.com">회원번호</a>
+      <div class="space"></div></p>
+
+      <img src="{{ url_for('static', filename='홍대홍보.png') }}" width = "400" height = "280">
+        <p></p>
+      <p><img src="{{ url_for('static', filename='홍대마크.png') }}" width = "150" height = "70">
+        Hongik University</p>
+
+    </center>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  </body>
+</html>
